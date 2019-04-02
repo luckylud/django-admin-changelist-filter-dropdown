@@ -1,0 +1,11 @@
+{% load i18n %}
+{% now "u" as unikid %}
+{% with filterid=title|cut:" "|lower|add:unikid %}
+<label for="{{ filterid }}">{% if choices|length > 1 %}<a href="#" title="{% trans 'Clear' %} {{ title }}" onclick="document.getElementById('{{ filterid }}').selectedIndex=0;window.location=document.getElementById('{{ filterid }}').value;"><img src="/static/admin/img/icon-deletelink.svg" alt="Clear filter"></a>{% endif %}{% blocktrans with filter_title=title %}{{ filter_title }}{% endblocktrans %}
+<select class="filtersel" onchange="window.location=this.value" title="{% blocktrans with filter_title=title %}Filter by {{ filter_title }}{% endblocktrans %}" id="{{ filterid }}">
+{% for choice in choices %}
+    <option{% if choice.selected %} selected="selected"{% endif %} value="{{ choice.query_string|iriencode }}">{{ choice.display|escape }}</option>
+{% endfor %}
+</select>
+</label>
+{% endwith %}

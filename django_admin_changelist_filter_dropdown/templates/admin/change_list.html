@@ -1,0 +1,48 @@
+{% extends "admin/change_list.html" %}
+{% load static i18n admin_urls admin_list %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/changelist_filter_dropdown.css" %}">
+<script type="text/javascript">
+    (function($) {
+        $(document).ready(function($) {
+            var slideup = true;
+            $("#changelist-filter h2").click(function() {
+                $("#changelist-filter ul").slideToggle(200);
+                if (slideup) {
+                    $("#changelist").removeClass("filtered");
+                    slideup = false;
+		} else {
+                    $("#changelist").addClass("filtered");
+                    slideup = true;
+                };
+            });
+            var filters = 0;
+            $("#changelist-filter select").each(function() {
+                if ($(this)[0].selectedIndex != 0) {
+                    $('label[for="' + $(this).attr('id') + '"]').addClass("filteredline");
+                    filters += 1;
+                };
+            });
+	    if (filters > 0) {
+                $("#changelist-filter .module h2").addClass("filteredtitle");
+		$("#changelist-filter .module h2").html(filters + " " + "{% trans 'Filter' %}");
+            };
+        });
+    })(django.jQuery);
+</script>
+{% endblock %}
+
+{% block filters %}
+  {% if cl.has_filters %}
+    <div id="changelist-filter">
+      <form id="change-form">
+        <fieldset class="module">
+          <h2 title="{% trans 'Toggle Filter' %}">{% trans 'Filter' %}</h2>
+          <ul>{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}</ul>
+        </fieldset>
+      </form>
+    </div>
+  {% endif %}
+{% endblock %}

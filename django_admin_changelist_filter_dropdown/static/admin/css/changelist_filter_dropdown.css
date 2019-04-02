@@ -1,0 +1,112 @@
+/* CHANGELISTS */
+
+#content {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.change-list .filtered {
+    min-height: 0px;
+}
+
+.change-list .filtered .results, .change-list .filtered .paginator,
+.filtered #toolbar, .filtered div.xfull {
+    margin-right: 240px;
+    width: auto;
+}
+
+#changelist {
+    padding-top: 0em;
+}
+
+#changelist #toolbar form span {
+    background: rgba(248, 248, 248, 0.7);
+}
+
+#changelist-filter:hover {
+    display: inline !important;
+}
+
+.filtersel {
+    width: 50%;
+    float: right;
+    padding: 3px;
+    margin: 0.5em;
+}
+
+#changelist-filter label {
+    display: inline;
+    float: right;
+    clear: right;
+    width: 100%;
+    margin: 0 0 .5em 0;
+    padding: 0;
+    font-weight: bold;
+    white-space: wrap;
+    line-height: 22px;
+    text-align: right;
+}
+
+#changelist-filter label a {
+    display: inline !important;
+    float: left;
+}
+
+#changelist-filter label img {
+    vertical-align: middle;
+    margin: 5px;
+    transform: scale(1.2, 1.2);
+    display: none;
+}
+
+.filteredline {
+    background: #a1a1a1;
+}
+
+.filteredline img {
+    display: block !important;
+}
+
+.filteredtitle {
+    background: rgba(48, 54, 60, 0.7) !important;
+}
+
+#changelist-filter label:hover {
+    background: #a1a1be;
+}
+
+#changelist-filter h2 {
+    padding: 3px 3px;
+    padding-right: 20px;
+    margin-bottom: 0px;
+    text-align: right;
+    cursor: pointer;
+}
+
+#changelist-filter h3 {
+    font-weight: 300;
+    padding: 0 2px;
+    margin-bottom: 2px;
+}
+
+#changelist-filter ul {
+    padding: 0 5px 5px;
+}
+
+#changelist-filter a {
+    overflow-x: visible;
+}
+
+.filtersel,
+#changelist .actions select {
+    vertical-align: top;
+    height: 24px;
+    background: rgba(248, 248, 248, 0.8);
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 0 0 0 4px;
+    margin: 0;
+    margin-left: 10px;
+}
