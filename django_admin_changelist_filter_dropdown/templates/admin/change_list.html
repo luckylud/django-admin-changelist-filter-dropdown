@@ -7,16 +7,9 @@
 <script type="text/javascript">
     (function($) {
         $(document).ready(function($) {
-            var slideup = true;
-            $("#changelist-filter h2").click(function() {
+            $("#changelist-filter ul").hide();
+            $("#changelist-filter").hover(function() {
                 $("#changelist-filter ul").slideToggle(200);
-                if (slideup) {
-                    $("#changelist").removeClass("filtered");
-                    slideup = false;
-		} else {
-                    $("#changelist").addClass("filtered");
-                    slideup = true;
-                };
             });
             var filters = 0;
             $("#changelist-filter select").each(function() {
@@ -25,9 +18,9 @@
                     filters += 1;
                 };
             });
-	    if (filters > 0) {
+        if (filters > 0) {
                 $("#changelist-filter .module h2").addClass("filteredtitle");
-		$("#changelist-filter .module h2").html(filters + " " + "{% trans 'Filter' %}");
+        $("#changelist-filter .module h2").html(filters + " " + "{% trans 'Filter' %}");
             };
         });
     })(django.jQuery);
