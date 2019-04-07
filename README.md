@@ -11,23 +11,17 @@ A django admin add-on to make changelist-filter div collapsable with nice dropdo
 Enable in `settings.py`:
 
 ```py
-import django_admin_changelist_filter_dropdown
-
 
 INSTALLED_APPS = (
-    ...
     'django_admin_changelist_filter_dropdown',
-    ...
-)
-...
-TEMPLATES = [
-    {
-        'DIRS': [os.path.join(os.path.dirname(
-            django_admin_changelist_filter_dropdown.__file__), 'templates')],
+    'django.contrib.admin',
     ...
 )
 
 ```
+
+*django_admin_changelist_filter_dropdown must be install before django.contrib.admin
+
 
 Install css:
 
