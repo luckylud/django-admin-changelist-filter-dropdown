@@ -9,6 +9,15 @@
     min-height: 0px;
 }
 
+#changelist ul {
+    display: none;
+}
+
+#changelist #change-form:hover ul,
+#changelist #change-form:hover ul a {
+    display: block;
+}
+
 .change-list .filtered .results, .change-list .filtered .paginator,
 .filtered #toolbar, .filtered div.xfull {
     margin-right: 0px;

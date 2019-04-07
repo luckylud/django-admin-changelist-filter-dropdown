@@ -7,10 +7,6 @@
 <script type="text/javascript">
     (function($) {
         $(document).ready(function($) {
-            $("#changelist-filter ul").hide();
-            $("#changelist-filter").hover(function() {
-                $("#changelist-filter ul").slideToggle(200);
-            });
             var filters = 0;
             $("#changelist-filter select").each(function() {
                 if ($(this)[0].selectedIndex != 0) {
